@@ -116,16 +116,81 @@ public class HttpRequest implements Runnable {
 	}
 
 	private static String contentType(String fileName) {
+		// HTML
 		if (fileName.endsWith(".htm") || fileName.endsWith(".html")) {
 			return "text/html";
 		}
-		//TODO: outros content types
-		// if(?) {
-		// ?;
-		// }
-		// if(?) {
-		// ?;
-		// }
+		// CSS
+		else if (fileName.endsWith(".css")) {
+			return "text/css";
+		}
+		// GIF
+		else if (fileName.endsWith(".gif")) {
+			return "image/gif";
+		}
+		// JS
+		else if (fileName.endsWith(".js")) {
+			return "application/javascript";
+		}
+		// JPG/JPEG
+		else if (fileName.endsWith(".jpg") || fileName.endsWith(".jpeg")) {
+			return "image/jpeg";
+		}
+		// MID/MIDI
+		else if (fileName.endsWith(".mid") || fileName.endsWith(".midi")) {
+			return "audio/midi";
+		}
+		// MPEG
+		else if (fileName.endsWith(".mpeg")) {
+			return "video/mpeg";
+		}
+		// PNG
+		else if (fileName.endsWith(".png")) {
+			return "image/png";
+		}
+		// ICO
+		else if (fileName.endsWith(".ico")) {
+			return "image/x-icon";
+		}
+		// XML
+		else if (fileName.endsWith(".xml")) {
+			return "application/xml";
+		}
+		// JSON
+		else if (fileName.endsWith(".json")) {
+			return "application/json";
+		}
+		// ZIP
+		else if (fileName.endsWith(".zip")) {
+			return "application/zip";
+		}
+		// SVG
+		else if (fileName.endsWith(".svg")) {
+			return "image/svg+xml";
+		}
+		// FONTS (.otf, .ttf, .woff, .woff2, .eot)
+		else if (fileName.endsWith(".otf")) {
+			//return "font/otf";
+			return "application/font-sfnt";
+		}
+		else if (fileName.endsWith(".ttf")) {
+			//return "font/ttf";
+			return "application/font-sfnt";
+		}
+		else if (fileName.endsWith(".woff")) {
+			//return "font/woff";
+			//return "application/font-woff";
+			return "application/x-font-woff";
+		}
+		else if (fileName.endsWith(".woff2")) {
+			//return "font/woff2";
+			return "application/font-woff2";
+		}
+		else if (fileName.endsWith(".eot")) {
+			return "application/vnd.ms-fontobject";
+		}
+
+		// Arquivo binário genérico
 		return "application/octet-stream";
 	}
 
